@@ -9,12 +9,14 @@ background-image: url(background.png)
 
 # Ausgangssituation
 
-- Es gibt 2 Rollen:
-  - Entwickler: Die Person, die eine Anforderung entwickelt.
-  - Reviewer: Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt.
-- 1. Entwickler legt den Feature-Branch an, veröffentlicht ihn auf dem Server und arbeitet darauf
-- 2. Entwickler arbeitet auch an dem Feature.
-- Nach Abschluss der Entwicklung prüft der Revier die Arbeit und schließt diese ab.
+Es gibt 2 Rollen:
+1. **Entwickler** - Die Person, die eine Anforderung entwickelt
+   * Entwickler legt den Feature-Branch an und
+   * Veröffentlicht ihn auf dem Remote-Repository
+   * Entwickler arbeitet auch an dem Feature
+
+2. **Reviewer** - Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt
+   * Nach Abschluss der Entwicklung prüft der Reviewer die Arbeit und erteilt Freigabe.
 
 ---
 class: middle
@@ -24,7 +26,7 @@ background-image: url(background.png)
 
 ### Feature-Branch erzeugen
 
-```
+```git
 git flow feature start [featurename]
 ```
 
