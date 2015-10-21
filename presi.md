@@ -11,7 +11,7 @@ background-image: url(background.png)
 
 - Es gibt 2 Rollen:
   - Entwickler: Die Person, die eine Anforderung entwickelt.
-  - Reviewer: Die Person, die die Entwicklung prüft und Verbesserungsvorschläge auszeigt.
+  - Reviewer: Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt.
 - 1. Entwickler legt den Feature-Branch an, veröffentlicht ihn auf dem Server und arbeitet darauf
 - 2. Entwickler arbeitet auch an dem Feature.
 - Nach Abschluss der Entwicklung prüft der Revier die Arbeit und schließt diese ab.
@@ -43,7 +43,7 @@ background-image: url(background.png)
 ### Änderungen der anderen Entwickler vom Server laden
 
 ```
-git flow feature pull orgin [featurename]
+git flow feature pull origin [featurename]
 ```
 
 ### Änderungen durchführen und auf dem Server veröffentlichen
@@ -76,7 +76,7 @@ background-image: url(background.png)
 ### Änderungen der anderen Entwickler vom Server laden
 
 ```
-git flow feature pull orgin [featurename]
+git flow feature pull origin [featurename]
 ```
 
 ### Änderungen durchführen und auf dem Server veröffentlichen
