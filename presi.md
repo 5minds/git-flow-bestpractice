@@ -1,7 +1,7 @@
 class: center, middle
 background-image: url(background-intro.png)
 
-# Working with git and git-flow
+# Arbeiten mit git-flow
 
 ---
 class: middle
@@ -9,14 +9,37 @@ background-image: url(background.png)
 
 # Ausgangssituation
 
-Es gibt 2 Rollen:
-1. **Entwickler** - Die Person, die eine Anforderung entwickelt
-   * Entwickler legt den Feature-Branch an
-   * Veröffentlicht den Branch auf dem Remote-Repository
-   * Entwickler arbeitet an dem Feature
+Was ist git-flow?
 
-2. **Reviewer** - Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt
-   * Nach Abschluss der Entwicklung prüft der Reviewer die Arbeit und erteilt Freigabe.
+---
+class: middle
+background-image: url(background.png)
+
+# Ausgangssituation
+
+4 Branches
+
+|   |   |   |
+|--|-------|---|
+| 1. | **master** | Produktive Releases |
+| 2. | **develop** | Integration 'neuer Releases' |
+| 3. | **feature** | Unterstützende Branches |
+| 4. | **hotfix** | Wenns mal schnell gehen muss... |
+
+---
+class: middle
+background-image: url(background.png)
+
+# Ausgangssituation
+
+2 Rollen:
+1. **Entwickler**
+   * Entwickelt Anforderung
+   * Zustöndig für Feature-Branches (start/pubslish/finish)
+
+2. **Reviewer**
+   * Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt
+   * Nach Abschluss der Entwicklung prüft der Reviewer die Arbeit und erteilt Freigabe
 
 ---
 class: middle
@@ -24,13 +47,13 @@ background-image: url(background.png)
 
 # 1. Entwickler beginnt die Arbeit
 
-### Feature-Branch erzeugen
+## Feature-Branch erzeugen
 
 ```bash
   » git flow feature start [featurename]
 ```
 
-### Feature-Branch auf dem Server veröffentlichen
+## Feature-Branch auf dem Server veröffentlichen
 
 ```bash
   » git flow feature publish [featurename]
@@ -40,15 +63,15 @@ background-image: url(background.png)
 class: middle
 background-image: url(background.png)
 
-# 1. Entwickler entwickelt an dem Feature
+# 2. Entwickler entwickelt an dem Feature
 
-### Änderungen der anderen Entwickler vom Server laden
+## Änderungen der anderen Entwickler vom Server laden
 
 ```bash
   » git flow feature pull origin [featurename]
 ```
 
-### Änderungen durchführen und auf dem Server veröffentlichen
+## Änderungen durchführen und auf dem Server veröffentlichen
 
 ```bash
   » git commit
@@ -59,7 +82,7 @@ background-image: url(background.png)
 class: middle
 background-image: url(background.png)
 
-# 2. Entwickler holt sich das Feature vom Server
+# 3. Entwickler holt sich das Feature vom Server
 
 ```bash
   » git flow feature track [featurename]
@@ -70,53 +93,22 @@ optional:
 ```
 
 ---
-class: middle
-background-image: url(background.png)
-
-# 1. Entwickler entwickelt an dem Feature
-
-### Änderungen der anderen Entwickler vom Server laden
-
-```bash
-  » git flow feature pull origin [featurename]
-```
-
-### Änderungen durchführen und auf dem Server veröffentlichen
-
-```bash
-  » git commit
-  » git push  # eventuell git push origin feature/[featurename]
-```
-
----
 class: center, middle
 background-image: url(background.png)
 
 # Arbeit abgeschlossen --> Review!
 
 ---
-class: middle
-background-image: url(background.png)
-
-# Reviewer
-
-### Holen des aktuellen Stand vom Server
-```bash
-  » git flow feature track [featurename]
-```
-oder
-```bash
-  » git flow feature pull origin [featurename]
-```
-
----
 class: center, middle
 background-image: url(background.png)
 
 # Reviewer
 
-### Review und Tests durchführen
+## Aufgaben
 
+1. Reviews durchführen
+1. Tests durchführen
+1. Features abschließen
 
 ---
 class: middle
@@ -124,7 +116,25 @@ background-image: url(background.png)
 
 # Reviewer
 
-### Feature-Branch abschließen. Es wird damit automatisch mit dem **Development**-Branch gemerged und gelöscht
+## Holen des aktuellen Stands vom Server
+
+```bash
+  » git flow feature track [featurename]
+```
+
+oder
+
+```bash
+  » git flow feature pull origin [featurename]
+```
+
+---
+class: middle
+background-image: url(background.png)
+
+# Reviewer
+
+## Feature-Branch abschließen. Es wird damit automatisch mit dem **Development**-Branch gemerged und gelöscht
 **NUR LOKAL**
 
 ```bash
@@ -137,12 +147,12 @@ background-image: url(background.png)
 
 # Reviewer
 
-### Änderungen auf dem Server schieben
+## Änderungen auf dem Server schieben
 ```bash
   » git push
 ```
 
-### Feature Branch löschen
+## Feature Branch löschen
 ```bash
   » git push origin :feature/[featurename]
 ```
@@ -159,12 +169,12 @@ background-image: url(background.png)
 
 # Release-Branch erstellen
 
-### Release starten
+## Release starten
 ```bash
   » git flow release start v<MAJOR>.<MINOR>.<PATCH>
 ```
 
-### Release veröffentlichen
+## Release veröffentlichen
 ```bash
   » git flow release publish v<MAJOR>.<MINOR>.<PATCH>
 
@@ -193,7 +203,7 @@ background-image: url(background.png)
 
 # Hotfix-Branch erstellen
 
-### Hotfix starten
+## Hotfix starten
 ```bash
   » git flow hotfix start v<MAJOR>.<MINOR>.<PATCH>_<YYYYMMDD>_<#>
 ```
