@@ -70,25 +70,6 @@ optional:
 ```
 
 ---
-class: middle
-background-image: url(background.png)
-
-# 1. Entwickler entwickelt an dem Feature
-
-### Änderungen der anderen Entwickler vom Server laden
-
-```bash
-  » git flow feature pull origin [featurename]
-```
-
-### Änderungen durchführen und auf dem Server veröffentlichen
-
-```bash
-  » git commit
-  » git push  # eventuell git push origin feature/[featurename]
-```
-
----
 class: center, middle
 background-image: url(background.png)
 
