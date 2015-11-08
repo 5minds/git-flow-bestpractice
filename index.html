@@ -13,7 +13,27 @@
 				font-family: 'Ubuntu';
 				font-weight: normal;
 			}
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-content h1 { font-size: 2.5em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type,
+      .left-column h3:last-child {
+        color: #000;
+      }
+      .right-column {
+        width: 65%;
+        float: right;
+        padding-top: 8em;
+      }
+  .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
   <body>
@@ -27,7 +47,7 @@
 				navigation: {
 					click: true
 				},
-				highlightStyle: 'monokai',
+				highlightStyle: 'solarized_dark',
 				highlightLines: true,
 				slideNumberFormat: '%current% of %total%',
 				countIncrementalSlides: true
