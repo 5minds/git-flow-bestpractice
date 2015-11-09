@@ -4,85 +4,87 @@ background-image: url(background-intro.png)
 # Arbeiten mit git-flow
 
 ---
-class: middle
+class: middle, center
 background-image: url(background.png)
 
-# Ausgangssituation
-
-Was ist git-flow?
+## Was ist git-flow?
 
 ---
-class: middle
-background-image: url(background.png)
+background-image: url(img/s0_start.png)
 
-# Ausgangssituation
+.right-column[
+## Ausgangssituation
 
-4 Branches
-
-|   |   |   |
-|--|-------|---|
-| 1. | **master** | Produktive Releases |
-| 2. | **develop** | Integration 'neuer Releases' |
-| 3. | **feature** | Unterstützende Branches |
-| 4. | **hotfix** | Wenns mal schnell gehen muss... |
-
----
-class: middle
-background-image: url(background.png)
-
-# Ausgangssituation
-
-2 Rollen:
 1. **Entwickler**
    * Entwickelt Anforderung
-   * Zustöndig für Feature-Branches (start/pubslish/finish)
+   * Zuständig für Features
+   * Setzt Hotfixes um
 
 2. **Reviewer**
-   * Die Person, die die Entwicklung prüft und Verbesserungsvorschläge aufzeigt
-   * Nach Abschluss der Entwicklung prüft der Reviewer die Arbeit und erteilt Freigabe
+   * Prüft nach Abschluss der Entwicklung
+   * Zeigt Verbesserungsvorschläge auf
+   * Erteilt Freigabe
+]
 
 ---
-class: middle
-background-image: url(background.png)
+background-image: url(img/s1_git_init.png)
 
-# 1. Entwickler beginnt die Arbeit
+.right-column[
+## Ausgangssituation
 
-## Feature-Branch erzeugen
+* **master** - Produktive Releases
+* **develop** - Integration 'neuer Releases'
+* **feature** - Unterstützende Branches
+* **hotfix** - Für akute Probleme
+]
+
+---
+class: 
+background-image: url(img/s2_feature_start.png)
+
+.right-column[
+## Entwickler beginnt die Arbeit
+
+** *feature*-Branch erzeugen**
 
 ```bash
   » git flow feature start [featurename]
 ```
 
-## Feature-Branch auf dem Server veröffentlichen
+** *feature*-Branch auf dem Server veröffentlichen**
 
 ```bash
   » git flow feature publish [featurename]
 ```
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s2_1_feature_commit.png)
 
-# 2. Entwickler entwickelt an dem Feature
+.right-column[
+## Entwickler arbeitet am Feature
 
-## Änderungen der anderen Entwickler vom Server laden
+Änderungen der anderen Entwickler vom Server laden
 
 ```bash
   » git flow feature pull origin [featurename]
 ```
 
-## Änderungen durchführen und auf dem Server veröffentlichen
+Änderungen durchführen und auf dem Server veröffentlichen
 
 ```bash
-  » git commit
-  » git push  # eventuell git push origin feature/[featurename]
+  » git commit -m "done..."
+  » git push
 ```
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s5_feature_pull.png)
 
-# 3. Entwickler holt sich das Feature vom Server
+.right-column[
+## Entwickler holt sich das Feature vom Server
 
 ```bash
   » git flow feature track [featurename]
@@ -91,6 +93,7 @@ optional:
 ```bash
   » git flow feature rebase -i [featurename]
 ```
+]
 
 ---
 class: center, middle
@@ -99,24 +102,27 @@ background-image: url(background.png)
 # Arbeit abgeschlossen --> Review!
 
 ---
-class: center, middle
+class:
 background-image: url(background.png)
 
-# Reviewer
+.right-column[
+## Aufgaben des Reviewer
 
-## Aufgaben
+1 Reviews durchführen
 
-1. Reviews durchführen
-1. Tests durchführen
-1. Features abschließen
+2 Tests durchführen
+
+3 Features abschließen
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s5_feature_pull.png)
 
-# Reviewer
+.right-column[
+## Reviewer
 
-## Holen des aktuellen Stands vom Server
+**Holen des aktuellen Stands vom Server**
 
 ```bash
   » git flow feature track [featurename]
@@ -127,69 +133,86 @@ oder
 ```bash
   » git flow feature pull origin [featurename]
 ```
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s3_feature_finish.png)
 
-# Reviewer
+.right-column[
+## Reviewer
 
-## Feature-Branch abschließen. Es wird damit automatisch mit dem **Development**-Branch gemerged und gelöscht
-**NUR LOKAL**
+**Feature abschließen. Es wird damit automatisch mit dem *develop*-Branch gemerged und der *feature*-Branch wird gelöscht**
 
 ```bash
-  » git flow feature finish -F [featurename]   # -F führt zuerst ein Fetch aus ;-)
+  » git flow feature finish -F [featurename]
+  » # -F lässt zuerst einen Fetch durchführen
 ```
 
+Das geschieht zunächst nur **LOKAL**.
+]
+
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s4_feature_publish.png)
 
-# Reviewer
+.right-column[
+## Reviewer
 
-## Änderungen auf dem Server schieben
+**Änderungen auf dem Server veröffentlichen**
 ```bash
   » git push
 ```
 
-## Feature Branch löschen
+Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelöscht
+
+!!!
+
+** *feature*-Branch löschen**
 ```bash
   » git push origin :feature/[featurename]
 ```
+]
 
 ---
 class: center, middle
-background-image: url(background.png)
+background-image: url(img/bg1.png)
 
 # Neue Softwareversion --> **Release** ;-)
 
+
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s6_release_start.png)
 
-# Release-Branch erstellen
+.right-column[
+## *release*-Branch erstellen
 
-## Release starten
+**Release starten**
 ```bash
   » git flow release start v<MAJOR>.<MINOR>.<PATCH>
 ```
 
-## Release veröffentlichen
+**Release veröffentlichen**
+
 ```bash
   » git flow release publish v<MAJOR>.<MINOR>.<PATCH>
 
   » git push
 ```
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s7_release_finish.png)
 
-# Release finalisieren
+.right-column[
+## Release finalisieren
 
 ```bash
   » git flow release finish -Fp v<MAJOR>.<MINOR>.<PATCH>
 ```
+]
 
 ---
 class: center, middle
@@ -198,27 +221,32 @@ background-image: url(background.png)
 # Bug --> **Hotfix** ;-(
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s8_hotfix_start.png)
 
-# Hotfix-Branch erstellen
+.right-column[
+## *hotfix*-Branch erstellen
 
-## Hotfix starten
+**Hotfix starten**
 ```bash
   » git flow hotfix start v<MAJOR>.<MINOR>.<PATCH>_<YYYYMMDD>_<#>
 ```
+]
 
 ---
-class: center, middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s9_hotfix_finish.png)
 
-# Hotfix fixen und testen
+.right-column[
+## Bug fixen und testen
+]
 
 ---
-class: middle
-background-image: url(background.png)
+class: 
+background-image: url(img/s9_hotfix_finish.png)
 
-# Hotfix finalisieren
+.right-column[
+## Hotfix finalisieren
 
 ```bash
   » git commit ...
@@ -227,6 +255,15 @@ background-image: url(background.png)
 
   » git push
 ```
+]
+
+---
+class:
+background-image: url(img/s10_done.png)
+
+.right-column[
+##Das war es bereits
+]
 
 ---
 class: center, middle
@@ -235,10 +272,11 @@ background-image: url(background.png)
 # Tips und Tricks
 
 ---
-class: middle
+class: 
 background-image: url(background.png)
 
-# Feature/Release/Hotfix verwerfen
+.right-column[
+## Feature/Release/Hotfix verwerfen
 
 ```bash
   » git flow feature|release|hotfix finish [...name]
@@ -247,33 +285,43 @@ oder
 ```bash
   » git branch -D [branchname] # (Präfix nicht vergessen :feature/...)
 ```
+]
 
 ---
-class: middle
+class: 
 background-image: url(background.png)
 
-# Remote Tracking Branches anzeigen
+.right-column[
+## Remote Tracking Branches anzeigen
 
 ```bash
   » git remote show origin
 ```
+]
 
 ---
-class: middle
+class: 
 background-image: url(background.png)
 
-# Lokale Änderungen rückgängig machen
+.right-column[
+## Lokale Änderungen verwerfen
 
 ```bash
   » git reset HEAD --hard
 ```
 
+Unwiederruflich!
+]
+
+
 ---
-class: middle
+class: 
 background-image: url(background.png)
 
-# Development Branch als Tracking-Branch auschecken
+.right-column[
+## *develop*-Branch als Tracking-Branch auschecken
 
 ```bash
-  » git checkout -t origin/development
+  » git checkout -t origin/develop
 ```
+]
