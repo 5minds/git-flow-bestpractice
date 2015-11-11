@@ -15,11 +15,11 @@ background-image: url(img/git-flow-command.png)
 .right-column-more-space[
 ## git-flow Befehlsstruktur
 
-* *git-flow* ist eine Zusammenfassung von standard *git*-Befehlen
+* *git-flow* ist eine Zusammenfassung von Standard *git*-Befehlen
 
 * Vereinfacht einen gemeinsamen Workflow
 
-* Orientiert sich an einem zentralisierten Entwiclungsansatz
+* Orientiert sich an einem zentralisierten Entwicklungsansatz
 
 * Vereinfacht die Qualitätssicherung (Peer-Reviews)
 ]
@@ -221,7 +221,7 @@ background-image: url(img/s6_release_start.png)
   » git push
 ```
 
-[1] Analaog zu SemVer.org
+[1] Analog zu SemVer.org
 
 ]
 
