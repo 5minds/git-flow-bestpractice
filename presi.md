@@ -192,13 +192,6 @@ background-image: url(img/s4_feature_publish.png)
 ```
 
 Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelöscht
-
-!!!
-
-** *feature*-Branch löschen**
-```bash
-  » git push origin :feature/[featurename]
-```
 ]
 
 ---
