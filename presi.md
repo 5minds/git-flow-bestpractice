@@ -10,6 +10,21 @@ background-image: url(background.png)
 ## Was ist git-flow?
 
 ---
+background-image: url(img/git-flow-command.png)
+
+.right-column-more-space[
+## git-flow Befehlsstruktur
+
+* *git-flow* ist eine Zusammenfassung von Standard *git*-Befehlen
+
+* Vereinfacht einen gemeinsamen Workflow
+
+* Orientiert sich an einem zentralisierten Entwicklungsansatz
+
+* Vereinfacht die Qualitätssicherung (Peer-Reviews)
+]
+
+---
 background-image: url(img/s0_start.png)
 
 .right-column[
@@ -17,13 +32,14 @@ background-image: url(img/s0_start.png)
 
 1. **Entwickler**
    * Entwickelt Anforderung
-   * Zuständig für Features
+   * Zuständig für Feature-Branches (start/publish/finish)
    * Setzt Hotfixes um
 
 2. **Reviewer**
    * Prüft nach Abschluss der Entwicklung
    * Zeigt Verbesserungsvorschläge auf
    * Erteilt Freigabe
+   * Wissenstransfer
 ]
 
 ---
@@ -32,14 +48,28 @@ background-image: url(img/s1_git_init.png)
 .right-column[
 ## Ausgangssituation
 
-* **master** - Produktive Releases
-* **develop** - Integration 'neuer Releases'
-* **feature** - Unterstützende Branches
-* **hotfix** - Für akute Probleme
+```bash
+  » git flow init .
+```
 ]
 
 ---
-class: 
+
+background-image: url(img/s1-1_branch_names.png)
+
+.right-column[
+## Ausgangssituation
+
+* **master** - Letzte Releases
+* **release** - Releases
+* **develop** - Integration 'neuer Releases'
+* **feature** - Umsetzung neuer Features
+* **hotfix** - Lösung akuter Probleme
+* **(support)** - Unterstützende Funktion
+]
+
+---
+class:
 background-image: url(img/s2_feature_start.png)
 
 .right-column[
@@ -59,7 +89,7 @@ background-image: url(img/s2_feature_start.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s2_1_feature_commit.png)
 
 .right-column[
@@ -74,13 +104,14 @@ background-image: url(img/s2_1_feature_commit.png)
 Änderungen durchführen und auf dem Server veröffentlichen
 
 ```bash
+  » git add <Files>
   » git commit -m "done..."
   » git push
 ```
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s5_feature_pull.png)
 
 .right-column[
@@ -88,10 +119,6 @@ background-image: url(img/s5_feature_pull.png)
 
 ```bash
   » git flow feature track [featurename]
-```
-optional:
-```bash
-  » git flow feature rebase -i [featurename]
 ```
 ]
 
@@ -116,7 +143,7 @@ background-image: url(background.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s5_feature_pull.png)
 
 .right-column[
@@ -136,7 +163,7 @@ oder
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s3_feature_finish.png)
 
 .right-column[
@@ -153,7 +180,7 @@ Das geschieht zunächst nur **LOKAL**.
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s4_feature_publish.png)
 
 .right-column[
@@ -165,13 +192,6 @@ background-image: url(img/s4_feature_publish.png)
 ```
 
 Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelöscht
-
-!!!
-
-** *feature*-Branch löschen**
-```bash
-  » git push origin :feature/[featurename]
-```
 ]
 
 ---
@@ -182,7 +202,7 @@ background-image: url(img/bg1.png)
 
 
 ---
-class: 
+class:
 background-image: url(img/s6_release_start.png)
 
 .right-column[
@@ -200,10 +220,13 @@ background-image: url(img/s6_release_start.png)
 
   » git push
 ```
+
+[1] Analog zu SemVer.org
+
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s7_release_finish.png)
 
 .right-column[
@@ -221,20 +244,29 @@ background-image: url(background.png)
 # Bug --> **Hotfix** ;-(
 
 ---
-class: 
+class:
 background-image: url(img/s8_hotfix_start.png)
 
 .right-column[
-## *hotfix*-Branch erstellen
+## Hotfix im *hotfix*-Branch starten
+
+** *master*-Branch auschecken**
+
+```bash
+  git checkout master
+```
 
 **Hotfix starten**
 ```bash
-  » git flow hotfix start v<MAJOR>.<MINOR>.<PATCH>_<YYYYMMDD>_<#>
+  » git flow hotfix start v<Ma>.<Mi>.<Pa>_<YYYYMMDD>_<#>
 ```
+
+Wieder SemVer verwenden.
+
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
@@ -242,7 +274,7 @@ background-image: url(img/s9_hotfix_finish.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
@@ -255,6 +287,17 @@ background-image: url(img/s9_hotfix_finish.png)
 
   » git push
 ```
+]
+
+---
+class:
+background-image: url(img/s9_hotfix_finish.png)
+
+.right-column[
+## Release erzeugen
+
+Analog zu "Neue Softwareversion"
+
 ]
 
 ---
@@ -272,7 +315,7 @@ background-image: url(background.png)
 # Tips und Tricks
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -288,7 +331,7 @@ oder
 ]
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -300,7 +343,7 @@ background-image: url(background.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -310,18 +353,31 @@ background-image: url(background.png)
   » git reset HEAD --hard
 ```
 
-Unwiederruflich!
+Unwiderruflich!
 ]
 
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
-## *develop*-Branch als Tracking-Branch auschecken
+## **develop** Branch als Tracking-Branch auschecken
 
 ```bash
   » git checkout -t origin/develop
+```
+]
+---
+class:
+background-image: url(background.png)
+
+.right-column[
+## Rebase beim feature finish
+
+
+
+```bash
+  » git rebase <...>
 ```
 ]
