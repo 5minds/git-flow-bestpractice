@@ -24,7 +24,9 @@ background-image: url(img/s0_start.png)
    * Prüft nach Abschluss der Entwicklung
    * Zeigt Verbesserungsvorschläge auf
    * Erteilt Freigabe
+   * Wissenstransfer
 ]
+
 
 ---
 background-image: url(img/s1_git_init.png)
@@ -32,10 +34,24 @@ background-image: url(img/s1_git_init.png)
 .right-column[
 ## Ausgangssituation
 
-* **master** - Produktive Releases
+```bash
+  $ git flow init .
+```
+]
+
+---
+
+background-image: url(img/s1_git_init.png)
+
+.right-column[
+## Ausgangssituation
+
+* **master** - Letzte Releases
+* **release** - Releases
 * **develop** - Integration 'neuer Releases'
-* **feature** - Unterstützende Branches
-* **hotfix** - Für akute Probleme
+* **feature** - Umsetzung neuer Features
+* **hotfix** - Lösung akuter Probleme
+* **(support)** - Unterstützende Funktion
 ]
 
 ---
@@ -74,6 +90,7 @@ background-image: url(img/s2_1_feature_commit.png)
 Änderungen durchführen und auf dem Server veröffentlichen
 
 ```bash
+  » git add <Files>
   » git commit -m "done..."
   » git push
 ```
@@ -88,10 +105,6 @@ background-image: url(img/s5_feature_pull.png)
 
 ```bash
   » git flow feature track [featurename]
-```
-optional:
-```bash
-  » git flow feature rebase -i [featurename]
 ```
 ]
 
@@ -166,12 +179,6 @@ background-image: url(img/s4_feature_publish.png)
 
 Jetzt sind sowohl auf dem Repository als auch lokal der Feature-Branch gelöscht
 
-!!!
-
-**Feature Branch löschen**
-```bash
-  » git push origin :feature/[featurename]
-```
 ]
 
 ---
@@ -186,7 +193,7 @@ class:
 background-image: url(img/s6_release_start.png)
 
 .right-column[
-## Release-Branch erstellen
+## *release*-Branch erstellen
 
 **Release starten**
 ```bash
@@ -200,6 +207,9 @@ background-image: url(img/s6_release_start.png)
 
   » git push
 ```
+
+[1] Analaog zu SemVer.org
+
 ]
 
 ---
@@ -225,12 +235,21 @@ class:
 background-image: url(img/s8_hotfix_start.png)
 
 .right-column[
-## Hotfix-Branch erstellen
+## Hotfix im *hotfix*-Branch starten
+
+** *master*-Branch auschecken**
+
+```bash
+  git checkout master
+```
 
 **Hotfix starten**
 ```bash
-  » git flow hotfix start v<MAJOR>.<MINOR>.<PATCH>_<YYYYMMDD>_<#>
+  » git flow hotfix start v<Ma>.<Mi>.<Pa>_<YYYYMMDD>_<#>
 ```
+
+Wieder SemVer verwenden.
+
 ]
 
 ---
@@ -255,6 +274,17 @@ background-image: url(img/s9_hotfix_finish.png)
 
   » git push
 ```
+]
+
+---
+class: 
+background-image: url(img/s9_hotfix_finish.png)
+
+.right-column[
+## Release erzeugen
+
+Analog zu "Neue Softwareversion"
+
 ]
 
 ---
@@ -310,7 +340,7 @@ background-image: url(background.png)
   » git reset HEAD --hard
 ```
 
-Unwiederruflich!
+Unwiderruflich!
 ]
 
 
@@ -319,9 +349,22 @@ class:
 background-image: url(background.png)
 
 .right-column[
-## Development Branch als Tracking-Branch auschecken
+## **develop** Branch als Tracking-Branch auschecken
 
 ```bash
   » git checkout -t origin/development
+```
+]
+---
+class: 
+background-image: url(background.png)
+
+.right-column[
+## Rebase beim feature finish
+
+
+
+```bash
+  » git rebase <...>
 ```
 ]
