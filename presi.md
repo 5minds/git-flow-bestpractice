@@ -61,13 +61,13 @@ background-image: url(img/s2_feature_start.png)
 .right-column[
 ## Entwickler beginnt die Arbeit
 
-**Feature-Branch erzeugen**
+** *feature*-Branch erzeugen**
 
 ```bash
   » git flow feature start [featurename]
 ```
 
-**Feature-Branch auf dem Server veröffentlichen**
+** *feature*-Branch auf dem Server veröffentlichen**
 
 ```bash
   » git flow feature publish [featurename]
@@ -155,7 +155,7 @@ background-image: url(img/s3_feature_finish.png)
 .right-column[
 ## Reviewer
 
-**Feature abschließen. Es wird damit automatisch mit dem *develop*-Branch gemerged und der Feature Branch wird gelöscht**
+**Feature abschließen. Es wird damit automatisch mit dem *develop*-Branch gemerged und der *feature*-Branch wird gelöscht**
 
 ```bash
   » git flow feature finish -F [featurename]
@@ -177,8 +177,14 @@ background-image: url(img/s4_feature_publish.png)
   » git push
 ```
 
-Jetzt sind sowohl auf dem Repository als auch lokal der Feature-Branch gelöscht
+Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelöscht
 
+!!!
+
+** *feature*-Branch löschen**
+```bash
+  » git push origin :feature/[featurename]
+```
 ]
 
 ---
@@ -253,11 +259,11 @@ Wieder SemVer verwenden.
 ]
 
 ---
-class: center, 
+class: 
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
-## Hotfix fixen und testen
+## Bug fixen und testen
 ]
 
 ---
@@ -352,7 +358,7 @@ background-image: url(background.png)
 ## **develop** Branch als Tracking-Branch auschecken
 
 ```bash
-  » git checkout -t origin/development
+  » git checkout -t origin/develop
 ```
 ]
 ---
