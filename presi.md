@@ -10,6 +10,21 @@ background-image: url(background.png)
 ## Was ist git-flow?
 
 ---
+background-image: url(img/git-flow-command.png)
+
+.right-column-more-space[
+## git-flow Befehlsstruktur
+
+* *git-flow* ist eine Zusammenfassung von Standard *git*-Befehlen
+
+* Vereinfacht einen gemeinsamen Workflow
+
+* Orientiert sich an einem zentralisierten Entwicklungsansatz
+
+* Vereinfacht die Qualitätssicherung (Peer-Reviews)
+]
+
+---
 background-image: url(img/s0_start.png)
 
 .right-column[
@@ -27,7 +42,6 @@ background-image: url(img/s0_start.png)
    * Wissenstransfer
 ]
 
-
 ---
 background-image: url(img/s1_git_init.png)
 
@@ -35,13 +49,13 @@ background-image: url(img/s1_git_init.png)
 ## Ausgangssituation
 
 ```bash
-  $ git flow init .
+  » git flow init .
 ```
 ]
 
 ---
 
-background-image: url(img/s1_git_init.png)
+background-image: url(img/s1-1_branch_names.png)
 
 .right-column[
 ## Ausgangssituation
@@ -55,7 +69,7 @@ background-image: url(img/s1_git_init.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s2_feature_start.png)
 
 .right-column[
@@ -75,7 +89,7 @@ background-image: url(img/s2_feature_start.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s2_1_feature_commit.png)
 
 .right-column[
@@ -97,7 +111,7 @@ background-image: url(img/s2_1_feature_commit.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s5_feature_pull.png)
 
 .right-column[
@@ -129,7 +143,7 @@ background-image: url(background.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s5_feature_pull.png)
 
 .right-column[
@@ -149,7 +163,7 @@ oder
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s3_feature_finish.png)
 
 .right-column[
@@ -166,7 +180,7 @@ Das geschieht zunächst nur **LOKAL**.
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s4_feature_publish.png)
 
 .right-column[
@@ -178,13 +192,6 @@ background-image: url(img/s4_feature_publish.png)
 ```
 
 Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelöscht
-
-!!!
-
-** *feature*-Branch löschen**
-```bash
-  » git push origin :feature/[featurename]
-```
 ]
 
 ---
@@ -195,7 +202,7 @@ background-image: url(img/bg1.png)
 
 
 ---
-class: 
+class:
 background-image: url(img/s6_release_start.png)
 
 .right-column[
@@ -214,12 +221,12 @@ background-image: url(img/s6_release_start.png)
   » git push
 ```
 
-[1] Analaog zu SemVer.org
+[1] Analog zu SemVer.org
 
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s7_release_finish.png)
 
 .right-column[
@@ -237,7 +244,7 @@ background-image: url(background.png)
 # Bug --> **Hotfix** ;-(
 
 ---
-class: 
+class:
 background-image: url(img/s8_hotfix_start.png)
 
 .right-column[
@@ -259,7 +266,7 @@ Wieder SemVer verwenden.
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
@@ -267,7 +274,7 @@ background-image: url(img/s9_hotfix_finish.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
@@ -283,7 +290,7 @@ background-image: url(img/s9_hotfix_finish.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(img/s9_hotfix_finish.png)
 
 .right-column[
@@ -308,7 +315,7 @@ background-image: url(background.png)
 # Tips und Tricks
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -324,7 +331,7 @@ oder
 ]
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -336,7 +343,7 @@ background-image: url(background.png)
 ]
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -351,7 +358,7 @@ Unwiderruflich!
 
 
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
@@ -362,7 +369,7 @@ background-image: url(background.png)
 ```
 ]
 ---
-class: 
+class:
 background-image: url(background.png)
 
 .right-column[
