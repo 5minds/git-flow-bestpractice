@@ -221,7 +221,7 @@ background-image: url(img/s5_feature_pull.png)
 Beispiel:
 
 ```bash
-  git-dojo2 𝚿 git flow feature pull origin fancy2               (b:master)
+  git-dojo2 𝚿 git flow feature pull origin fancy2              (b:develop)
   Created local branch feature/fancy2 based on origin's feature/fancy2
 ```
 ]
@@ -236,7 +236,6 @@ background-image: url(img/s5_feature_pull.png)
 ** Sicherheitsfunktionen **
 
 ```bash
-  
   git-dojo2 𝚿 git flow feature pull origin fancy2 (b:feature/fancy_fea...)
 
   Trying to pull from 'feature/fancy2' while currently on
