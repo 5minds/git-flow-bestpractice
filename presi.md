@@ -195,7 +195,7 @@ Beispiel:
 ```bash
   git-dojo2 𝚿 git flow feature track fancy_feature             (b:develop)
 
-  Branch feature/fancy_feature set up to track remote 
+  Branch feature/fancy_feature set up to track remote
   branch feature/fancy_feature from origin.
   Switched to a new branch 'feature/fancy_feature'
 
@@ -248,7 +248,7 @@ background-image: url(img/s5_feature_pull.png)
 class: center, middle
 background-image: url(background.png)
 
-# Arbeit abgeschlossen --> Review!
+## Arbeit abgeschlossen --> Review!
 
 ---
 class:
@@ -347,7 +347,7 @@ Jetzt sind sowohl auf dem Repository als auch lokal der *feature*-Branch gelösc
 class: center, middle
 background-image: url(img/bg1.png)
 
-# Neue Softwareversion --> **Release** ;-)
+## Neue Softwareversion --> **Release** ;-)
 
 
 ---
@@ -422,7 +422,7 @@ background-image: url(img/s6_release_start.png)
 
   Summary of actions:
   - A new remote branch 'release/v0.1' was created
-  - The local branch 'release/v0.1' was configured to track the 
+  - The local branch 'release/v0.1' was configured to track the
     remote branch
   - You are now on branch 'release/v0.1'
 ```
@@ -454,7 +454,7 @@ background-image: url(img/s7_release_finish.png)
   git-dojo 𝚿 git flow release finish v0.1                 (b:release/v0.1)
 
   Switched to branch 'master'
-  Your branch is behind 'origin/master' by 1 commit, 
+  Your branch is behind 'origin/master' by 1 commit,
   and can be fast-forwarded.
     (use "git pull" to update your local branch)
   Merge made by the 'recursive' strategy.
@@ -495,7 +495,7 @@ background-image: url(img/s7_release_finish.png)
 class: center, middle
 background-image: url(background.png)
 
-# Bug --> **Hotfix** ;-(
+## Bug --> **Hotfix** ;-(
 
 ---
 class:
@@ -630,22 +630,20 @@ background-image: url(img/s9_hotfix_finish.png)
 .right-column[
 ### Release erzeugen
 
-Ein Release wurde **automatisch ** bei diesem Vorgang analog zu den vorher gezeigten Release-Vorgang erstellt.
+Ein Release wurde ** automatisch ** bei diesem Vorgang analog zu den vorher gezeigten Release-Vorgang erstellt.
 ]
 
 ---
-class:
+class: middle, center
 background-image: url(img/s10_done.png)
 
-.right-column[
-###Das war es bereits
-]
+### Das war es... 
 
 ---
 class: center, middle
 background-image: url(background.png)
 
-# Tips und Tricks
+## Tipps und Tricks
 
 ---
 class:
