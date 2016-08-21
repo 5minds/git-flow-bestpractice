@@ -441,7 +441,14 @@ Nach der Integration der Features wird der Release finalisiert:
   » git flow release finish -Fp v<MAJOR>.<MINOR>.<PATCH>
 ```
 
-Am Ende wird eine Stabile Version veröffentlicht und mit einem Tag versehen.
+Am Ende wird eine stabile Version veröffentlicht und mit einem Tag versehen.
+
+Danach müssen bei der Verwendung von GitHub auch noch die Tags auf dem Server
+gespeichert werden:
+
+```bash
+  » git push --tags 
+```
 ]
 
 ---
